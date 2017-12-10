@@ -14,6 +14,14 @@ public data class Vec(var xDir: Float = 0.0f, var yDir: Float = 0.0f){
 
 }
 
+operator fun Vec.plus(other: Vec): Vec {
+    return Vec(this.xDir + other.xDir, this.yDir + other.yDir)
+}
+
+operator fun Vec.minus(other: Vec): Vec {
+    return Vec(this.xDir - other.xDir, this.yDir - other.yDir)
+}
+
 operator fun Vec.times(scalar: Float): Vec {
     return Vec(this.xDir * scalar, this.yDir * scalar)
 }

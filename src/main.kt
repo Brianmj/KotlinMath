@@ -15,7 +15,7 @@ fun main(args: Array<String>){
     println((p2 + p1) * 0.5f)
     println((p2 + p1) / 3.0f)*/
 
-    val p3 = Point(3.0f, 4.0f)
+    /*val p3 = Point(3.0f, 4.0f)
     val p4 = Point(1.0f, 2f)
 
     val v2 = p3 - p4
@@ -23,6 +23,14 @@ fun main(args: Array<String>){
 
     println(normalized.xDir)
     println(normalized.yDir)
-    println(normalized.length)
+    println(normalized.length)*/
+
+    val v1 = Vec(4f, 0f)
+    val v2 = Vec(0f, -5f)
+
+    val r = v1 - v2
+    println(r)
+
+
 
 }
