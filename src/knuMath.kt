@@ -5,7 +5,12 @@ public data class Vec(var xDir: Float = 0.0f, var yDir: Float = 0.0f){
     val asPoint: Point
     get() { return Point(xDir, yDir)}
 
-    fun length() = sqrt((xDir * xDir) + (yDir * yDir))
+    val length: Float get() =  sqrt((xDir * xDir) + (yDir * yDir))
+
+    val normalized: Vec
+    get(){
+        return this / length
+    }
 
 }
 
@@ -16,6 +21,15 @@ operator fun Vec.times(scalar: Float): Vec {
 operator fun Float.times(vec: Vec): Vec {
     return vec * this
 }
+
+operator fun Vec.div(scalar: Float): Vec {
+    return Vec(this.xDir / scalar, this.yDir / scalar)
+}
+
+operator fun Float.div(vec: Vec): Vec {
+    return Vec(this/ vec.xDir, this / vec.yDir)
+}
+
 
 public data class Point(var x: Float = 0.0f, var y: Float = 0.0f) {
     fun addVector(vec: Vec): Point {
