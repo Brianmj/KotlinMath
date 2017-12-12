@@ -6,6 +6,8 @@ public data class Vec(var xDir: Float = 0.0f, var yDir: Float = 0.0f){
     get() { return Point(xDir, yDir)}
 
     val length: Float get() =  sqrt((xDir * xDir) + (yDir * yDir))
+    val lengthSqr: Float get() = (xDir * xDir) + (yDir * yDir)
+
 
     val normalized: Vec
     get(){
