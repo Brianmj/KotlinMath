@@ -1,4 +1,29 @@
-// Testing Vector3 stuff
+// Testing Vector4 stuff
+fun main(args: Array<String>){
+    val v1 = Vector4(1f, 0f, 0f, 2f)
+    val v2 = Vector4(3f, 0f, 4f, 4f)
+
+    println(v1)
+    println(v2)
+    println(v1.length)
+    println(v2.length)
+    println(v1.lengthSqr)
+    println(v2.lengthSqr)
+    println(v1.normalized)
+    println(v2.normalized)
+
+    val v3 = Vector4(1f, 0f, 0f, 0f)
+    val v4 = Vector4(0f, 1f, 0f, 0f)
+    val v5 = Vector4(-1f, 0f, 0f, 0f)
+
+    println(v3.dot(v5))
+    println(v5.cross(v4))
+
+
+
+}
+
+/*Testing Vector3 stuff
 fun main(args: Array<String>){
     val a = Vector3(1.0f, 1.0f, 0.0f)
     val b = Vector3(1.0f, 2.0f, 4.0f)
@@ -16,7 +41,16 @@ fun main(args: Array<String>){
     println(b * -5f)
     println(b / 2f)
     println(24f / b)
-}
+
+    val e = Vector3(1f, 0f, 0f)
+    val f = Vector3(0f, 1f, 0f)
+    val g = Vector3(1f, 0f, 0f)
+
+    println(e.dot(f))
+    println(e.dot(g))
+    println(e.cross(f))
+
+}*/
 
 /* Testing Vector2 stuff
 fun main(args: Array<String>){
