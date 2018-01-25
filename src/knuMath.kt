@@ -72,6 +72,10 @@ public data class Vector4(var xDir: Float = 0.0f, var yDir: Float = 0.0f, var zD
     val asVector3: Vector3 get() = Vector3(xDir, yDir, zDir)
 }
 
+operator fun Vector4.plus(other: Vector4) = Vector4(this.xDir + other.xDir, this.yDir + other.yDir, this.zDir + other.zDir, this.wDir + other.wDir)
+operator fun Vector4.minus(other: Vector4) = Vector4(this.xDir - other.xDir, this.yDir - other.yDir, this.zDir - other.zDir, this.wDir - other.wDir)
+operator fun Vector4.unaryMinus(): Vector4 = Vector4(-this.xDir, -this.yDir, -this.zDir, -this.wDir)
+
 fun Vector4.dot(other: Vector4): Float = (xDir * other.xDir) + (yDir * other.yDir) + (zDir * other.zDir) + (wDir * other.wDir)
 fun Vector4.cross(other: Vector4): Vector3 {
     // implemented in terms of Vector3

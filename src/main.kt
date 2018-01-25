@@ -16,10 +16,16 @@ fun main(args: Array<String>){
     val v4 = Vector4(0f, 1f, 0f, 0f)
     val v5 = Vector4(-1f, 0f, 0f, 0f)
 
+    val v6 = Vector4(5f, 2f, 1f, 6f)
+    val v7 = Vector4(1f, 0f, 1f, 2f)
+
     println(v3.dot(v5))
     println(v5.cross(v4))
 
-
+    println(v3 + v4)
+    println(v6 + v7)
+    println(v6 - v7)
+    println(-v6)
 
 }
 
