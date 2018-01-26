@@ -1,3 +1,4 @@
+import com.brianmj.*
 import java.nio.ByteBuffer
 import java.nio.ByteOrder
 
@@ -35,8 +36,11 @@ fun main(args: Array<String>){
     val fa = v6.toList
 
     println(fa)
-    val cin = listOf(v6, v7)
+    val cin = mutableListOf(v6, v7)
+
     val cout = cin.flatMap { it.toList }.toFloatArray()
+
+
     println("Size of cout is ${cout.size}")
     for (fl in cout) {
         println(fl)
@@ -47,6 +51,7 @@ fun main(args: Array<String>){
     println(v6 * 2f)
 
 
+    println("----End of Vector4 test")
 
 }
 

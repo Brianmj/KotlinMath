@@ -1,3 +1,5 @@
+package com.brianmj
+
 import kotlin.math.sqrt
 
 data class Vector2(var xDir: Float = 0.0f, var yDir: Float = 0.0f){
