@@ -1,3 +1,6 @@
+import java.nio.ByteBuffer
+import java.nio.ByteOrder
+
 // Testing Vector4 stuff
 fun main(args: Array<String>){
     val v1 = Vector4(1f, 0f, 0f, 2f)
@@ -16,7 +19,7 @@ fun main(args: Array<String>){
     val v4 = Vector4(0f, 1f, 0f, 0f)
     val v5 = Vector4(-1f, 0f, 0f, 0f)
 
-    val v6 = Vector4(5f, 2f, 1f, 6f)
+    val v6 = Vector4(5f, -2f, 1f, 6f)
     val v7 = Vector4(1f, 0f, 1f, 2f)
 
     println(v3.dot(v5))
@@ -26,6 +29,24 @@ fun main(args: Array<String>){
     println(v6 + v7)
     println(v6 - v7)
     println(-v6)
+
+    val bb = ByteBuffer.allocateDirect(4 * 8).order(ByteOrder.nativeOrder())
+    val fb = bb.asFloatBuffer()
+    val fa = v6.toList
+
+    println(fa)
+    val cin = listOf(v6, v7)
+    val cout = cin.flatMap { it.toList }.toFloatArray()
+    println("Size of cout is ${cout.size}")
+    for (fl in cout) {
+        println(fl)
+    }
+
+    fb.put(cout).flip()
+    println(fb)
+    println(v6 * 2f)
+
+
 
 }
 
