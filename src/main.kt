@@ -1,6 +1,10 @@
 import com.brianmj.*
+import com.sun.tools.javac.jvm.ByteCodes.fmod
+import java.nio.Buffer
 import java.nio.ByteBuffer
 import java.nio.ByteOrder
+
+
 
 // Testing Vector4 stuff
 fun main(args: Array<String>){
@@ -38,6 +42,7 @@ fun main(args: Array<String>){
     println(fa)
     val cin = mutableListOf(v6, v7)
 
+
     val cout = cin.flatMap { it.toList }.toFloatArray()
 
 
@@ -51,7 +56,14 @@ fun main(args: Array<String>){
     println(v6 * 2f)
 
 
+
     println("----End of Vector4 test")
+
+    arrayListOf(Vector3(), Vector3())
+    
+
+    val b = cin.makeBufferVector4()
+    println(b.hasArray())
 
 }
 

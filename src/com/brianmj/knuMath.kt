@@ -1,5 +1,8 @@
 package com.brianmj
 
+import java.nio.Buffer
+import java.nio.ByteBuffer
+import java.nio.ByteOrder
 import kotlin.math.sqrt
 
 data class Vector2(var xDir: Float = 0.0f, var yDir: Float = 0.0f){
@@ -85,4 +88,24 @@ fun Vector4.cross(other: Vector4): Vector3 {
     val v1 = this.asVector3
     val v2 = other.asVector3
     return v1.cross(v2)
+}
+
+
+// UTILITIES ============================================================================
+
+fun List<Vector2>.makeBufferVector2(): Buffer {
+    val fa = flatMap { it.toList }.toFloatArray()
+    val sizeOfFloat = 4
+    return ByteBuffer.allocateDirect(fa.size * sizeOfFloat).order(ByteOrder.nativeOrder()).asFloatBuffer().put(fa).flip()
+}
+
+fun List<Vector3>.makeBufferVector3(): Buffer {
+    val fa = flatMap { it.toList }.toFloatArray()
+    val sizeOfFloat = 4
+    return ByteBuffer.allocateDirect(fa.size * sizeOfFloat).order(ByteOrder.nativeOrder()).asFloatBuffer().put(fa).flip()
+}
+fun List<Vector4>.makeBufferVector4(): Buffer {
+    val fa = flatMap { it.toList }.toFloatArray()
+    val sizeOfFloat = 4
+    return ByteBuffer.allocateDirect(fa.size * sizeOfFloat).order(ByteOrder.nativeOrder()).asFloatBuffer().put(fa).flip()
 }
