@@ -1,5 +1,5 @@
 import com.brianmj.*
-import com.sun.tools.javac.jvm.ByteCodes.fmod
+
 import java.nio.Buffer
 import java.nio.ByteBuffer
 import java.nio.ByteOrder
@@ -10,6 +10,9 @@ import java.nio.ByteOrder
 fun main(args: Array<String>){
     val v1 = Vector4(1f, 0f, 0f, 2f)
     val v2 = Vector4(3f, 0f, 4f, 4f)
+
+    v2.set(9f, 8f, 6f, 7f)
+
 
     println(v1)
     println(v2)

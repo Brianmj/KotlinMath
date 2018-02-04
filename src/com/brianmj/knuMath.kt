@@ -38,6 +38,11 @@ operator fun Float.div(vector2: Vector2): Vector2 {
     return Vector2(this/ vector2.xDir, this / vector2.yDir)
 }
 
+fun Vector2.set(x: Float, y: Float) {
+    xDir = x
+    yDir = y
+}
+
 data class Vector3(var xDir: Float = 0.0f, var yDir: Float = 0.0f, var zDir: Float = 0.0f)
 {
     val length: Float get() = sqrt((xDir * xDir) + (yDir * yDir) + (zDir * zDir))
@@ -61,6 +66,12 @@ fun Vector3.cross(other: Vector3): Vector3 {
     val z = (this.xDir * other.yDir) - (this.yDir * other.xDir)
 
     return Vector3(x, y, z)
+}
+
+fun Vector3.set(x: Float, y: Float, z: Float) {
+    xDir = x
+    yDir = y
+    zDir = z
 }
 
 data class Vector4(var xDir: Float = 0.0f, var yDir: Float = 0.0f, var zDir: Float = 0.0f, var wDir: Float = 0.0f)
@@ -90,6 +101,12 @@ fun Vector4.cross(other: Vector4): Vector3 {
     return v1.cross(v2)
 }
 
+fun Vector4.set(x: Float, y: Float, z: Float, w: Float) {
+    xDir = x
+    yDir = y
+    zDir = z
+    wDir = w
+}
 
 // UTILITIES ============================================================================
 
